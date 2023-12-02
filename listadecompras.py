@@ -11,13 +11,18 @@ while True:
         os.system('cls')
         produto = input('Qual produto deseja adicionar a lista? ')
         lista_de_compras.append(produto)
-        print(lista_de_compras)
 
     if opcaoinicial == 'a':
         os.system('cls')
         pos_apagar = int(input('Digite o índice que deseja apagar: '))
-        del lista_de_compras[pos_apagar]
-        print(lista_de_compras)
+
+        try:
+            del lista_de_compras[pos_apagar]
+
+        except ValueError:
+            print('Digite um valor inteiro.')
+        except IndexError:
+            print('O indice não existe na lista')
 
     if opcaoinicial == 'l':
         os.system('cls')
