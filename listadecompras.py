@@ -16,7 +16,7 @@ while True:
     if opcaoinicial == 'a':
         os.system('cls')
         pos_apagar = int(input('Digite o índice que deseja apagar: '))
-        lista_de_compras.pop(pos_apagar)
+        del lista_de_compras[pos_apagar]
         print(lista_de_compras)
 
     if opcaoinicial == 'l':
