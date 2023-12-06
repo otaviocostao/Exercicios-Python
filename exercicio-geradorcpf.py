@@ -1,4 +1,9 @@
-nove_digitos= '345512323'
+import random
+
+nove_digitos= ''
+for i in range (9):
+    nove_digitos += str(random.randint(0, 9))
+    
 contador_regressivo = 10
 contador_regressivo_1 = 11
 soma_digitos = 0
