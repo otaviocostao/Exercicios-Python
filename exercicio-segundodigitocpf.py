@@ -21,6 +21,36 @@ Se o resultado anterior for maior que 9:
     resultado é 0
 contrário disso:
     resultado é o valor da conta
-
 O segundo dígito do CPF é 0
 """
+
+cpf = '74682489070'
+nove_digitos= cpf[:9]
+dez_digitos = cpf[:10]
+contador_regressivo = 10
+contador_regressivo_1 = 11
+soma_digitos = 0
+soma_digitos_1 = 0
+
+for digito in nove_digitos:
+    soma_digitos += int(digito) * contador_regressivo
+    contador_regressivo -= 1
+
+primeiro_digito = (soma_digitos*10)%11
+
+primeiro_digito = primeiro_digito if primeiro_digito <= 9 else 0
+
+for digito_1 in dez_digitos:
+    soma_digitos_1 += int(digito_1) * contador_regressivo_1
+    contador_regressivo_1 -= 1
+
+segundo_digito = (soma_digitos_1*10)%11
+
+segundo_digito = segundo_digito if segundo_digito <=9 else 0
+
+cpf_gerado = f'{nove_digitos}{primeiro_digito}{segundo_digito}'
+
+if cpf == cpf_gerado:
+    print(f'O CPF: {cpf} enviado pelo usuário é valido')
+else:
+    print(f'O CPF: {cpf} inviado pelo usuário é invalido')
