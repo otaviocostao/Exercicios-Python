@@ -26,7 +26,6 @@ O segundo dígito do CPF é 0
 
 cpf = '746.824.890-70'.replace('.', '').replace('-', '').replace(' ', '')
 nove_digitos= cpf[:9]
-dez_digitos = cpf[:10]
 contador_regressivo = 10
 contador_regressivo_1 = 11
 soma_digitos = 0
@@ -40,6 +39,7 @@ primeiro_digito = (soma_digitos*10)%11
 
 primeiro_digito = primeiro_digito if primeiro_digito <= 9 else 0
 
+dez_digitos = nove_digitos + str(primeiro_digito)
 for digito_1 in dez_digitos:
     soma_digitos_1 += int(digito_1) * contador_regressivo_1
     contador_regressivo_1 -= 1
