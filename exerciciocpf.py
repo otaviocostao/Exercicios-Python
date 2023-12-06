@@ -1,5 +1,5 @@
 """
-Calculo do primeiro dígito do CPF
+Calculo do primeiro dígito após o hífen do CPF
 CPF: 746.824.890-70
 Colete a soma dos 9 primeiros dígitos do CPF
 multiplicando cada um dos valores por uma
@@ -24,3 +24,16 @@ contrário disso:
 O primeiro dígito do CPF é 7
 """
 
+cpf = '74682489070'
+nove_digitos = cpf[:9]
+contador_regressivo = 10
+soma_digitos = 0
+
+for digito in nove_digitos:
+    soma_digitos += int(digito) * contador_regressivo
+    contador_regressivo -= 1
+
+primeiro_digito = (soma_digitos*10)%11
+
+primeiro_digito = primeiro_digito if primeiro_digito <= 9 else 0
+print(f'O primeiro dígito do CPF: "{cpf}" após o hífen é: "{primeiro_digito}"')
