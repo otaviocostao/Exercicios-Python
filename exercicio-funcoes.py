@@ -1,4 +1,4 @@
-# Exercícios com funções
+# 1- Exercício com funções
 
 # Crie uma função que multiplica todos os argumentos
 # não nomeados recebidos
@@ -14,4 +14,19 @@ def multiplicar(*args):
 valores = multiplicar(1, 2, 3, 4, 5)
 
 print(valores)
+
+# 2- Exercício com funções
+
+# Crie uma função que fala se um numero é par ou ímpar
+# Retorne se o número é par ou ímpar
+
+def parimpar(numero):
+    if numero % 2 == 0:
+        return f'O numero {numero} é par'
+    elif numero % 2 != 0:
+        return f'O numero {numero} é ímpar'
+
+valor_usuario = int(input('Digite um número inteiro: '))
+
+print(parimpar(valor_usuario))
 
