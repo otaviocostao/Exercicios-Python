@@ -25,3 +25,19 @@ lista_de_listas_de_inteiros = [
     [5, 3, 1, 8, 5, 7, 1, 8, 8, 7],
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
+
+def encontra_numero_duplicado(lista_inteiros):
+    set_dos_numeros = set()
+    primeiro_duplicado = -1
+    for numero in lista_inteiros:
+        set_dos_numeros.add(numero)
+
+        if numero in set_dos_numeros:
+            primeiro_duplicado = numero
+            break
+    
+    return primeiro_duplicado
+
+for lista in lista_de_listas_de_inteiros:
+    print(lista, encontra_numero_duplicado(lista))
+    
