@@ -1,0 +1,47 @@
+# Empacotamento e desempacotamento de dicts
+
+a, b= 1, 2
+a, b = b, a
+
+pessoa = {
+    'nome': 'Otavio',
+    'sobrenome': 'Costa'
+}
+
+dados_pessoa= {
+    'idade': 19,
+    'altura': 1.8,
+}
+
+a,b = pessoa.values()
+
+print()
+print(a, b)
+print()
+
+c, d = pessoa.items()
+print(c, d)
+print()
+
+(c1, c2), (d1, d2)= pessoa.items()
+print(c1, c2, d1, d2)
+print()
+
+for chave, valor in pessoa.items():
+    print(f'O seu {chave} é {valor}')
+
+# Unindo dois dicionários:
+
+uniao_dicts = {**pessoa, **dados_pessoa}
+
+print()
+print(uniao_dicts)
+print()
+
+# args e kwargs
+# arguments e keyword arguments
+
+def mostra_args_nomeados(*args, **kwargs):
+    print('Não nomeados:', args)
+
+mostra_args_nomeados(uniao_dicts)
